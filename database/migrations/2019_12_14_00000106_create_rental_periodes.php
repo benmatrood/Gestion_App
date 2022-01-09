@@ -16,7 +16,7 @@ class CreateRentalPeriodes extends Migration
         Schema::create('rental_periodes', function (Blueprint $table) {
             $table->id();
             $table->string('wording');
-            $table->time('hour_value');
+            $table->integer('hour_value');
         });
     }
 
