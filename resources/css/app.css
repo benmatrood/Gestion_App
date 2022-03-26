@@ -1,4 +1,25 @@
 /*  import admin-lte css */
 
 @import "admin-lte/dist/css/adminlte.min.css";
-@import "admin-lte/plugins/fontawesome-free/css/all.css"
+@import "admin-lte/plugins/fontawesome-free/css/all.css";
+
+.login-card-body,
+.register-card-body {
+    padding: 40px !important;
+    border-radius: 40px !important;
+}
+
+.card {
+    border-radius: 20px !important;
+}
+
+.login-page,
+.register-page {
+    background: #9b51e0 !important;
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

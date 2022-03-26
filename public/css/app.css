@@ -10,6 +10,13 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
+
+
 :root {
     --blue: #007bff;
     --indigo: #6610f2;
@@ -31,7 +38,8 @@
     --warning: #ffc107;
     --danger: #dc3545;
     --light: #f8f9fa;
-    --dark: #343a40;
+    --dark: #06223d;
+    --dark1: #06223d;
     --breakpoint-xs: 0;
     --breakpoint-sm: 576px;
     --breakpoint-md: 768px;
@@ -16966,7 +16974,7 @@ body.text-sm .control-sidebar {
 }
 
 .control-sidebar-dark {
-    background-color: #343a40
+    background-color: #06223d;
 }
 
 .control-sidebar-dark,
@@ -36959,7 +36967,7 @@ a.disabled.mailbox-attachment-close {
 .register-page {
     -ms-flex-align: center;
     align-items: center;
-    background-color: #e9ecef;
+    background-color: #06223d;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -36993,7 +37001,8 @@ a.disabled.mailbox-attachment-close {
     background-color: #fff;
     border-top: 0;
     color: #666;
-    padding: 20px
+    padding: 40px;
+    border-radius: 25px;
 }
 
 .login-card-body .input-group .form-control,
@@ -46390,11 +46399,11 @@ select.form-control-sm~.select2-container--default .select2-selection--multiple 
 }
 
 .list-group-unbordered>.list-group-item {
-    border-left: 0;
-    border-radius: 0;
-    border-right: 0;
+    /* border-left: 0; */
+    border-radius: 8px;
+    /* border-right: 0;
     padding-left: 0;
-    padding-right: 0
+    padding-right: 0 */
 }
 
 .list-header {
@@ -60776,4 +60785,3 @@ readers do not read off random characters that represent icons */
 }
 
 /*  import admin-lte css */
-/* @import"admin-lte/dist/css/skins/_all-skins.min.css"; */

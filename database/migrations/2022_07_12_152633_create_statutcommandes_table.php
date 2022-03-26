@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRentalPeriodes extends Migration
+class CreateStatutcommandesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateRentalPeriodes extends Migration
      */
     public function up()
     {
-        Schema::create('rental_periodes', function (Blueprint $table) {
+        Schema::create('statutcommandes', function (Blueprint $table) {
             $table->id();
-            $table->string('wording');
-            $table->integer('hour_value');
+            $table->string('nom_statutcommande');
         });
     }
 
@@ -27,6 +26,6 @@ class CreateRentalPeriodes extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rental_periodes');
+        Schema::dropIfExists('statutcommandes');
     }
 }
