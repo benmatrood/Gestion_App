@@ -16,7 +16,7 @@ class CreateCommandesTable extends Migration
         Schema::create('commandes', function (Blueprint $table) {
             $table->id();
             $table->date('date_commande');
-            $table->time('time')->default('00:00');
+            $table->time('time')->default('00:00:00');
             $table->integer('quantite');
             $table->integer('nombre_point');
             $table->foreignId('user_id')->constrained('users');
