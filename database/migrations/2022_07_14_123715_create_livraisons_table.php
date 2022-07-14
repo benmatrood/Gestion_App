@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDetailCommandeTable extends Migration
+class CreateLivraisonsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateDetailCommandeTable extends Migration
      */
     public function up()
     {
-        Schema::create('detail_commande', function (Blueprint $table) {
+        Schema::create('livraisons', function (Blueprint $table) {
             $table->id();
-            $table->integer('quantite');
-            $table->integer('nombre_point');
-            $table->date('date_commande');
-            $table->time('heure_commande')->default('00:00:00');
-            $table->foreignId('article_id')->constrained('articles');
+            $table->date('date_livraison');
+            $table->time('heure_livraison')->default('00:00:00');
             $table->foreignId('commande_id')->constrained('commandes');
+            $table->foreignId('user_id')->constrained('users');
         });
         // activer la clef etrangere
         Schema::enableForeignKeyConstraints();
@@ -33,10 +31,10 @@ class CreateDetailCommandeTable extends Migration
      */
     public function down()
     {
-        Schema::table('detail_commande', function (Blueprint $table) {
-            $table->dropForeign(['article_id']);
+        Schema::table('livraisons', function (Blueprint $table) {
             $table->dropForeign(['commande_id']);
+            $table->dropForeign(['user_id']);
         });
-        Schema::dropIfExists('detail_commande');
+        Schema::dropIfExists('livraisons');
     }
 }

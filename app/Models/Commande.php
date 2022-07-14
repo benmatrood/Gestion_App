@@ -32,6 +32,18 @@ class Commande extends Model
     {
         return $this->belongsTo(User::class,"user_id","id");
     }
+    // relation un a un  entre commandes et livraisons
+    // qui retoune les info de chaque livraisons avec les commandes
+    public function r_commande_livraison()
+    {
+        return $this->belongsTo(Livraison::class,"livraison_id","id");
+    }
+    // relation un a un  entre commandes et boutiques
+    // qui retoune les info de chaque boutiques avec les commandes
+    public function r_commande_boutique()
+    {
+        return $this->belongsTo(Boutique::class,"boutique_id","id");
+    }
      // relation plusieurs a plusieurs entre commandes et articles 
     // qui retoune les info des commandes  avec leurs articles en details
     public function r_commande_article()

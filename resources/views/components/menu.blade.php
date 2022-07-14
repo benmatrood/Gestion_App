@@ -96,13 +96,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../forms/editors.html" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Sous Familles</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../forms/editors.html" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Paliers Privilèges</p>
                     </a>
@@ -124,31 +124,31 @@
             </a>
             <ul class="nav nav-treeview" style="display: none;">
                 <li class="nav-item">
-                    <a href="../forms/advanced.html" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Commandes</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../forms/advanced.html" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Détails Commandes</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../forms/editors.html" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>En cours</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../forms/editors.html" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Annuler</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../forms/editors.html" class="nav-link">
+                    <a href="#" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Terminer</p>
                     </a>

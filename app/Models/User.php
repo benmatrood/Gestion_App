@@ -54,6 +54,18 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Permission::class,"user_permission","user_id","permission_id");
     }
+    // relation un a plusieurs entre users et commandes
+    // qui retoune les info des users avec leurs commandes
+    public function r_user_commande()
+    {
+        return $this->hasMany(Commande::class,"user_id","id");
+    }
+        // relation un a un  entre users et boutiques
+    // qui retoune les info de chaque boutiques avec les users
+    public function r_user_boutique()
+    {
+        return $this->belongsTo(Boutique::class,"boutique_id","id");
+    }
 
     // Vérifie le role de l'utilisateur
     public function hasRole($role)

@@ -15,6 +15,7 @@ class CreatePalierprivilegesTable extends Migration
     {
         Schema::create('palierprivileges', function (Blueprint $table) {
             $table->id();
+            $table->string('nom_palierprivilege');
             $table->integer('nombre_points');
         });
     }

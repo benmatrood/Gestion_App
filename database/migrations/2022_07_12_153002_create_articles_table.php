@@ -20,6 +20,7 @@ class CreateArticlesTable extends Migration
             $table->integer('stock')->default(1);
             $table->string('url_image')->nullable();
             $table->text('despription');
+            $table->integer('est_disponible')->default(1);
             $table->foreignId('groupe_id')->constrained('groupes');
             $table->foreignId('famille_id')->constrained('familles');
             $table->foreignId('sousfamille_id')->constrained('sousfamilles');

@@ -22,8 +22,11 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('avatar')->nullable();
+            $table->foreignId('id_boutique')->constrained('boutiques');
             $table->rememberToken();//pour les coukies(se rappeler de moi)
         });
+        // activer la clef etrangere
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -33,6 +36,9 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['id_boutique']);
+        });
         Schema::dropIfExists('users');
     }
 }
