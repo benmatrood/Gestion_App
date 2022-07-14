@@ -17,6 +17,8 @@ class CreateDetailcommandesTable extends Migration
             $table->id();
             $table->integer('quantite');
             $table->integer('nombre_point');
+            $table->date('date_commande');
+            $table->time('heure_commande')->default('00:00:00');
             $table->foreignId('article_id')->constrained('articles');
             $table->foreignId('commande_id')->constrained('commandes');
         });

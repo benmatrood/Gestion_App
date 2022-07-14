@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Client extends Model
 {
     use HasFactory;
-    protected $fillable = ['nom_client','prenom_client','adresse_client','telephone_client','email_client'];
+    protected $fillable = ['numero_cart'];
     // relation un a plusieurs entre clients et commandes
     // qui retoune les info des clients avec leurs commandes
     public function r_client_commande()
