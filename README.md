@@ -5,8 +5,10 @@
 Cette solution permet notament de faire :
 
 -Gestion des clients
--Gestion des locations des produits
--Gestion des opérations de caisse
+-Gestion des Articles 
+-Gestion des opérations de vende par point
+-Gestion des stoks
+-Gestion des utilisateur(Rôles et habilitations)
 -Le reporting
 ## License
 
