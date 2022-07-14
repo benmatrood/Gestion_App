@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Palierprivilege extends Model
 {
     use HasFactory;
-    protected $fillable = ['nb_point'];
+    protected $fillable = ['nom_palierprivilege', 'nombre_points'];
   // relation un a plusieurs entre palierprivileges et articles
     // qui retoune les info des palierprivilegesavec leurs articles
     public function r_palierprivilege_article()

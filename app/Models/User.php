@@ -18,8 +18,11 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'nom_user',
+        'prenom_user',
+        'sexe_user',
         'email',
+        'boutique_id',
         'password',
     ];
 
@@ -41,6 +44,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+   
 
     // relation plusieurs a plusieurs entre users et roles
     // qui retoune les info des users  avec les roles
@@ -76,6 +80,12 @@ class User extends Authenticatable
     public function hasAnyRoles($roles)
     {
         return $this->r_user_role->whereIn('nom_role',$roles)->first() !==null;
+    }
+    // Creation de getter pour le role qui retorre tous les rôle séparé par "|"
+    //  grace a la methode implode
+    public function getAllRoleNamesAttribute()
+    {
+        return $this->r_user_role->implode('nom_role', '|');
     }
    
 }

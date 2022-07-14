@@ -1,4 +1,7 @@
 require('./bootstrap');
+// ajout de Sweetalert
+window.Swal = require('sweetalert2');
+
 
 // import adminlte files from node_modules
 import 'admin-lte/plugins/jquery/jquery.min.js';
