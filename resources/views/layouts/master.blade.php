@@ -11,6 +11,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ZINO CI</title>
+  <link rel="icon" type="image/x-icon" href="{{asset('images/zino-circle-bg.svg')}}">
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -28,19 +29,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/" class="brand-link">
+    {{-- <a href="/" class="brand-link">
       <span class="brand-text zino_logo">Catalogue Zino</span>
-    </a>
+    </a> --}}
 
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{asset('images/ben.jpg')}}" class="img-circle elevation-2" alt="User Image">
+          <img src="{{asset('images/LOGO_ZINO BLANC.png')}}" class="img-circle elevation-4" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Ben yaya</a>
+          <a href="#" class="d-block">ZINO CÔTE D'IVOIRE</a>
         </div>
       </div>     
 

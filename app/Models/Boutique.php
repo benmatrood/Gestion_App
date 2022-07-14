@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Boutique extends Model
 {
+    protected $fillable = ['id','nom_boutique'];
     use HasFactory;
     // relation un a plusieurs entre boutiques et commandes
     // qui retoune les info des boutiques avec leurs commandes

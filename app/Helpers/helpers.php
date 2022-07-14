@@ -1,4 +1,15 @@
 <?php
+use Illuminate\Support\Str;
+use App\Models\Boutique;
+
+// crétion des conctantes pour gérer les affichages des pages
+// avec livewire pour les pages list, edit et create
+define('PAGELIST', 'liste');
+define('PAGECREATEFORM', 'create');
+define('PAGEEDITFORM', 'edit');
+// constante de mot de passe par défaut
+define('DEFAULTPASSWORD', 'password');
+
 // recupérer le nom complet du user
 function user_full_name()
 {
@@ -20,13 +31,27 @@ function get_user_role_name()
     }
     return $roles_name;
 }
-// récupérer le nom de la route de l'utilisateur
-function set_menu_open($route)
-{
-   if(request()->route()->getName()===$route)
-   {
-       return "menu-open";
-   }
-    return "";
 
+// vérifier si une variable contient une string 
+function contains($container,$contenu){
+    return Str::contains($container,$contenu);
 }
+
+// récupérer le nom de la route de l'utilisateur
+// et vérifie si elle contien une string(celle que l'on veut vérifier)
+function set_menu_class($route,$class){
+$route_actuel = request()->route()->getName();
+    if(contains($route_actuel,$route)){
+        return $class;
+    }return "";
+}
+// récupère la route actuele et virifie si elle est égale à la route 
+// passée en paramètre si oui, retourne la classe active 
+function set_menu_active($route){
+    $route_actuel = request()->route()->getName();
+    if($route_actuel === $route){
+        return 'active';
+    }return "";
+}
+
+

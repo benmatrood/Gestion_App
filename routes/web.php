@@ -1,64 +1,22 @@
 <?php
-
-use Illuminate\Support\Facades\Route;
-// import Article model
-use App\Models\Article;
-// import Groupe model
-use App\Models\Groupe;
-// import Famille model
-use App\Models\Famille;
-// import Sousfamille model
-use App\Models\Sousfamille;
-// import Palierprivilege model
-use App\Models\Palierprivilege;
-// import Commande model
-use App\Models\Commande;
-// import TypeArticle model
-use App\Models\TypeArticle;
-
-// import Rental model
-use App\Models\Rental;
 // import Auth
+use App\Http\Livewire\Utilisateurs;
+use App\Http\Livewire\GroupeComp;
+use App\Http\Livewire\FamilleComp;
+use App\Http\Livewire\SousfamilleComp;
+use App\Http\Livewire\PalierprivilegeComp;
+use App\Http\Livewire\ArticleComp;
+use App\Http\Livewire\RoleComp;
+use App\Http\Livewire\PermissionComp;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Models\Boutique;
+use App\Models\Groupe;
+use App\Models\Article;
 
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::get('/toto', function () {
-    return Article::with('r_article_palierprivilege')->get();
-});
-
-
-
-
-// // retoune tous les articles de la db et leurs groups
-// Route::get('/groups', function () {
-//     return Article::all();
-// });
-
-
-// // retoune tous les types d'articles et leurs contenue
-// // (retoune les articles en fonction de leurs types) 
-// Route::get('/toto', function () {
-//     return Commande::with('r_commande_client')->get();
-// });
-// //
-// Route::get('/rental', function () {
-//     return Rental::with('r_rental_statu')->get();
-// });
-// //
-// Route::get('/property', function () {
-//     return Rental::with('r_rental_user')->get();
-//  });
-
-// Route::get('/property', function () {
-//     return Article::with('r_article_property_article')->get();
-// });
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -72,10 +30,75 @@ Route::group([
         "prefix" => "habilitations",
         "as" => "habilitations."
     ],function(){
-        Route::get("/utilisateurs", [App\Http\Controllers\UserController::class,  "index"])->name("users.index");
+        Route::get("/utilisateurs", Utilisateurs::class)->name("users.index");
+        });
+    // route pour la grestion des roles
+    Route::group([
+        "prefix" => "gestarticles",
+        "as" => "gestarticles."
+    ],function(){
+        Route::get("/roles", Role::class)->name("roles");
+        });
+    
+    // routes pour les groupes d'articles
+    Route::group([
+        "prefix" => "gestarticles",
+        "as" => "gestarticles."
+    ],function(){
+        Route::get("/groupes", GroupeComp::class)->name("groupes");
+    });
+    // Routes pour les familles d'articles
+    Route::group([
+        "prefix" => "gestarticles",
+        "as" => "gestarticles."
+    ],function(){
+        Route::get("/familles", FamilleComp::class)->name("familles");
+    });
+    // Routes pour les sous-familles d'articles
+    Route::group([
+        "prefix" => "gestarticles",
+        "as" => "gestarticles."
+    ],function(){
+        Route::get("/sousfamilles", SousfamilleComp::class)->name("sousfamilles");
+    });
+    // Routes pour les paliers privileges d'articles
+    Route::group([
+        "prefix" => "gestarticles",
+        "as" => "gestarticles."
+    ],function(){
+        Route::get("/palierprivileges", PalierprivilegeComp::class)->name("palierprivileges");
+    });
+
+    // Routes pour la gestion des articles
+    Route::group([
+        "prefix" => "gestarticles",
+        "as" => "gestarticles."
+    ],function(){
+        Route::get("/articles", ArticleComp::class)->name("articles");
     });
 });
 
 
-//route utilisateurs avec middleware pour sécuriser l'accès a la route
-// Route::get('/habilitations/utilisateurs', [App\Http\Controllers\UserController::class, 'index'])->name('utilisateurs')->middleware('auth.admin');
+
+
+
+
+
+
+
+
+
+
+// creer une route sans controller
+Route::get('/test', function(){
+    return User::with("r_user_boutique")->get();
+});
+// creer une route sans controller
+Route::get('/test1', function(){
+    return Boutique::with("r_boutique_user")->get();
+});
+
+Route::get('/test2', function(){
+    return Article::with("r_article_groupe")->get();
+});
+

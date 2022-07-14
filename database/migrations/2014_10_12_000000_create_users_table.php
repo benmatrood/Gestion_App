@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('avatar')->nullable();
-            $table->foreignId('id_boutique')->constrained('boutiques');
+            $table->foreignId('boutique_id')->constrained('boutiques');
             $table->rememberToken();//pour les coukies(se rappeler de moi)
         });
         // activer la clef etrangere
